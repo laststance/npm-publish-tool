@@ -1,0 +1,49 @@
+{
+  "name": "@lastsntance/npm-publish-tool",
+  "version": "1.0.0",
+  "description": "Automates the setup of release-it in user projects with proper versioning, changelogs, and GitHub releases",
+  "type": "module",
+  "bin": {
+    "npm-publish-tool": "./setup.mjs"
+  },
+  "main": "./setup.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky",
+    "prettier": "prettier --ignore-unknown --write ."
+  },
+  "keywords": [
+    "release-it",
+    "npm",
+    "publish",
+    "automation",
+    "github-actions",
+    "versioning",
+    "changelog"
+  ],
+  "author": "Ryota Murakami <dojce1048@gmail.com> (https://ryota-murakami.github.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laststance/npm-publish-tool"
+  },
+  "bugs": {
+    "url": "https://github.com/laststance/npm-publish-tool/issues"
+  },
+  "homepage": "https://github.com/laststance/npm-publish-tool#readme",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.5.3"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  }
+}
