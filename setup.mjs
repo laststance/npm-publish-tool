@@ -132,9 +132,9 @@ program
       progress.increment()
 
       // Step 6: Add script to package.json
-      logStep(6, 'Adding release-commit script to package.json...')
+      logStep(6, 'Adding push-release-commit script to package.json...')
       const scriptSuccess = addPackageScript(
-        'release-commit',
+        'push-release-commit',
         'node ./scripts/npm-publish-tool.mjs',
         projectPath,
       )
@@ -142,7 +142,10 @@ program
         logError('Failed to add script to package.json')
         process.exit(1)
       }
-      logFileOperation('Updated', 'package.json (added release-commit script)')
+      logFileOperation(
+        'Updated',
+        'package.json (added push-release-commit script)',
+      )
       progress.complete()
 
       // Success!

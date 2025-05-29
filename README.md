@@ -9,7 +9,7 @@ When users run `npx @lastsntance/npm-publish-tool setup`, it:
 3. ✅ **Creates .release-it.json** with optimized configuration
 4. ✅ **Sets up GitHub Actions workflow** (`.github/workflows/release.yml`)
 5. ✅ **Creates release script** (`scripts/npm-publish-tool.mjs`)
-6. ✅ **Updates package.json** with `release-commit` script
+6. ✅ **Updates package.json** with `push-release-commit` script
 
 ## Features
 
@@ -30,7 +30,7 @@ npx @lastsntance/npm-publish-tool setup
 ## Usage
 
 ```bash
-npm run release-commit
+npm run push-release-commit
 ```
 
 ### Options
@@ -56,7 +56,7 @@ When you run the setup command, the tool will:
 3. **Copy Configuration**: Creates `.release-it.json` with optimized settings
 4. **Setup GitHub Actions**: Creates `.github/workflows/release.yml` for automated releases
 5. **Create Scripts**: Creates `scripts/npm-publish-tool.mjs` for release commits
-6. **Update package.json**: Adds a `release-commit` script to your package.json
+6. **Update package.json**: Adds a `push-release-commit` script to your package.json
 
 ## Generated Files
 
@@ -91,7 +91,7 @@ Adds a new script:
 ```json
 {
   "scripts": {
-    "release-commit": "node ./scripts/npm-publish-tool.mjs"
+    "push-release-commit": "node ./scripts/npm-publish-tool.mjs"
   }
 }
 ```
@@ -102,7 +102,7 @@ After setup, your release workflow becomes:
 
 1. **Make your changes** and commit them normally
 2. **Update version** in package.json (manually or using `npm version`)
-3. **Create release commit**: `npm run release-commit`
+3. **Create release commit**: `npm run push-release-commit`
 4. **Push to main**: The GitHub Action will automatically create the release
 
 ## GitHub Repository Setup
@@ -163,7 +163,7 @@ Your project is now configured with release-it and GitHub Actions.
 Next steps:
 1. Configure your GitHub repository secrets (NPM_TOKEN, ACCESS_TOKEN)
 2. Make changes to your code
-3. Run: npm run release-commit
+3. Run: npm run push-release-commit
 4. Your release will be automatically created when pushed to main branch
 ```
 
