@@ -1,15 +1,15 @@
 ---
-description:
-globs:
+description: 
+globs: 
 alwaysApply: false
 ---
 # NPM Publish Tool Project Structure
 
 ## Project Overview
-This is `@lastsntance/npm-publish-tool` - an automated npm publishing setup tool that configures release-it, GitHub Actions, and creates release commit automation.
+This is `@lastsntance/npm-publish-tool` - an automated npm publishing initialization tool that configures release-it, GitHub Actions, and creates release commit automation.
 
 ## Main Entry Points
-- [setup.mjs](mdc:setup.mjs) - Main CLI setup script that installs and configures everything
+- [init.mjs](mdc:init.mjs) - Main CLI initialization script that installs and configures everything
 - [templates/npm-publish-tool.mjs](mdc:templates/npm-publish-tool.mjs) - Interactive release commit creation script
 
 ## Key Configuration Files
@@ -17,13 +17,13 @@ This is `@lastsntance/npm-publish-tool` - an automated npm publishing setup tool
 - [README.md](mdc:README.md) - Project documentation and usage instructions
 
 ## Library Structure
-- `/lib/` - Utility modules for setup operations
+- `/lib/` - Utility modules for initialization operations
   - `packageManager.mjs` - Package manager detection and installation
   - `fileOperations.mjs` - File and directory operations
   - `display.mjs` - Terminal output and progress visualization
 
 ## Templates Directory
-- `/templates/` - Template files copied during setup
+- `/templates/` - Template files copied during initialization
   - `npm-publish-tool.mjs` - Interactive semver selection and commit script
   - `.release-it.json` - Release-it configuration template
   - `release.yml` - GitHub Actions workflow template
@@ -35,5 +35,5 @@ This is `@lastsntance/npm-publish-tool` - an automated npm publishing setup tool
 - **GitHub Actions Integration**: Automated release publishing workflow
 
 ## Script Names
-- Setup command: `npx @lastsntance/npm-publish-tool setup`
+- Initialization command: `npx @lastsntance/npm-publish-tool init`
 - Generated script: `npm run push-release-commit` (creates release commits)

@@ -2,7 +2,7 @@
 
 ### 🎯 What the Tool Does
 
-When users run `npx @lastsntance/npm-publish-tool setup`, it:
+When users run `npx @lastsntance/npm-publish-tool init`, it:
 
 1. ✅ **Detects package manager** (npm/yarn/pnpm)
 2. ✅ **Installs release-it** as dev dependency
@@ -13,7 +13,7 @@ When users run `npx @lastsntance/npm-publish-tool setup`, it:
 
 ## Features
 
-🚀 **Automated Setup**: One command to set up everything
+🚀 **Automated Initialization**: One command to initialize everything
 📦 **Package Manager Detection**: Automatically detects and uses npm, yarn, or pnpm
 🔧 **GitHub Actions Integration**: Sets up automated releases via GitHub Actions
 📋 **Release Commit Automation**: Creates properly formatted release commits
@@ -24,7 +24,7 @@ When users run `npx @lastsntance/npm-publish-tool setup`, it:
 You don't need to install this globally. Use it directly with npx:
 
 ```bash
-npx @lastsntance/npm-publish-tool setup
+npx @lastsntance/npm-publish-tool init
 ```
 
 ## Usage
@@ -40,21 +40,21 @@ npm run push-release-commit
 ### Example
 
 ```bash
-# Setup in current directory
-npx @lastsntance/npm-publish-tool setup
+# Initialize in current directory
+npx @lastsntance/npm-publish-tool init
 
-# Setup in a specific directory
-npx @lastsntance/npm-publish-tool setup -p /path/to/your/project
+# Initialize in a specific directory
+npx @lastsntance/npm-publish-tool init -p /path/to/your/project
 ```
 
 ## What It Does
 
-When you run the setup command, the tool will:
+When you run the init command, the tool will:
 
 1. **Detect Package Manager**: Automatically detects whether you're using npm, yarn, or pnpm
 2. **Install release-it**: Installs the release-it package as a dev dependency
 3. **Copy Configuration**: Creates `.release-it.json` with optimized settings
-4. **Setup GitHub Actions**: Creates `.github/workflows/release.yml` for automated releases
+4. **Initialize GitHub Actions**: Creates `.github/workflows/release.yml` for automated releases
 5. **Create Scripts**: Creates `scripts/npm-publish-tool.mjs` for release commits
 6. **Update package.json**: Adds a `push-release-commit` script to your package.json
 
@@ -98,7 +98,7 @@ Adds a new script:
 
 ## Workflow
 
-After setup, your release workflow becomes:
+After initialization, your release workflow becomes:
 
 1. **Make your changes** and commit them normally
 2. **Update version** in package.json (manually or using `npm version`)
@@ -125,9 +125,9 @@ To use the automated releases, you need to configure these secrets in your GitHu
 ## Example Output
 
 ```
-🔧 NPM Publish Tool Setup
+🔧 NPM Publish Tool Initialization
 ──────────────────────────
-ℹ️  Setting up release-it configuration in: /path/to/project
+ℹ️  Initializing release-it configuration in: /path/to/project
 
 ──────────────────────────────────────────────────
 📋 Step 1: Detecting package manager...
@@ -151,13 +151,13 @@ Progress: [████████████████████] 100%
 📁 Created: scripts/npm-publish-tool.mjs
 Progress: [████████████████████] 100%
 
-📋 Step 6: Adding release-commit script to package.json...
-📁 Updated: package.json (added release-commit script)
+📋 Step 6: Adding push-release-commit script to package.json...
+📁 Updated: package.json (added push-release-commit script)
 Progress: [████████████████████] 100%
 
 ──────────────────────────────────────────────────
 
-🎉 Setup completed successfully!
+🎉 Initialization completed successfully!
 Your project is now configured with release-it and GitHub Actions.
 
 Next steps:

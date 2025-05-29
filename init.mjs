@@ -47,14 +47,14 @@ program
   .version(packageInfo.version)
 
 program
-  .command('setup')
-  .description('Setup release-it configuration in your project')
+  .command('init')
+  .description('Initialize release-it configuration in your project')
   .option('-p, --path <path>', 'Project path', process.cwd())
   .action(async (options) => {
     const projectPath = path.resolve(options.path)
 
-    logHeader('NPM Publish Tool Setup')
-    logInfo(`Setting up release-it configuration in: ${projectPath}`)
+    logHeader('NPM Publish Tool Initialization')
+    logInfo(`Initializing release-it configuration in: ${projectPath}`)
 
     // Validate project directory
     if (!fs.existsSync(projectPath)) {
@@ -152,7 +152,7 @@ program
       logSeparator()
       logCompletion()
     } catch (error) {
-      logError(`Setup failed: ${error.message}`)
+      logError(`Initialization failed: ${error.message}`)
       process.exit(1)
     }
   })

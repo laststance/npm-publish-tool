@@ -4,9 +4,9 @@
   "description": "Automates the setup of release-it in user projects with proper versioning, changelogs, and GitHub releases",
   "type": "module",
   "bin": {
-    "npm-publish-tool": "./setup.mjs"
+    "npm-publish-tool": "./init.mjs"
   },
-  "main": "./setup.mjs",
+  "main": "./init.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
