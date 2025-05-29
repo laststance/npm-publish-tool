@@ -3,6 +3,7 @@
 import fs from 'fs'
 import { execSync } from 'child_process'
 import { select } from '@inquirer/prompts'
+import ora from 'ora'
 
 /**
  * Script to create a release commit for npm-publish-tool
@@ -100,19 +101,38 @@ try {
 
   console.log(`📦 Updated package.json with version ${newVersion}`)
 
-  // Add all changes
-  execSync('git add --all', { stdio: 'inherit' })
+  // Stage package.json changes with spinner
+  const addSpinner = ora('package.json staged...').start()
+  try {
+    execSync('git add --all', { stdio: ['pipe', 'pipe', 'pipe'] })
+    addSpinner.succeed('📁 package.json staged')
+  } catch (error) {
+    addSpinner.fail('Failed to stage files')
+    throw error
+  }
 
-  // Commit with release message
+  // Create commit with spinner
   const commitMessage = `release v${newVersion}`
-  execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' })
+  const commitSpinner = ora(`Creating commit: ${commitMessage}...`).start()
+  try {
+    execSync(`git commit -m "${commitMessage}"`, {
+      stdio: ['pipe', 'pipe', 'pipe'],
+    })
+    commitSpinner.succeed(`✅ Release commit created: ${commitMessage}`)
+  } catch (error) {
+    commitSpinner.fail('Failed to create commit')
+    throw error
+  }
 
-  console.log(`✅ Release commit created: ${commitMessage}`)
-
-  // Push to remote
-  execSync('git push', { stdio: 'inherit' })
-
-  console.log('🚀 Changes pushed to remote repository')
+  // Push to remote with spinner
+  const pushSpinner = ora('exec git push...').start()
+  try {
+    execSync('git push', { stdio: ['pipe', 'pipe', 'pipe'] })
+    pushSpinner.succeed('🚀 Changes pushed to remote repository')
+  } catch (error) {
+    pushSpinner.fail('Failed to push to remote')
+    throw error
+  }
 } catch (error) {
   console.error('❌ Error:', error.message)
   process.exit(1)
