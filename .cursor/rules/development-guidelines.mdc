@@ -1,0 +1,48 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Development Guidelines
+
+## Code Style & Standards
+- Use **ESM modules** (`import`/`export`) throughout the project
+- Follow **Prettier** configuration for formatting
+- Use **ANSI escape codes** for terminal colors and formatting
+- Implement **rich terminal UI** with progress indicators and visual feedback
+
+## Key Dependencies
+- `@inquirer/prompts` - Interactive CLI prompts with select menus
+- `commander` - CLI argument parsing and command structure
+- `release-it` - Automated release management (installed by tool)
+
+## Terminal UI Standards
+- Use emoji prefixes for different message types:
+  - 📋 for informational messages
+  - ✅ for success messages  
+  - ❌ for error messages
+  - 🚀 for progress/action messages
+  - 📦 for package-related operations
+  - 📁 for file operations
+
+## Color Coding
+- **Green bold** (`\x1b[1;32m...\x1b[0m`) - Highlighted version numbers
+- **White** (`\x1b[37m...\x1b[0m`) - Secondary version parts
+- **Red emoji** 🔴 - Major version (breaking changes)
+- **Yellow emoji** 🟡 - Minor version (new features) 
+- **Green emoji** 🟢 - Patch version (bug fixes)
+
+## File Naming Conventions
+- Main scripts: `.mjs` extension (ES modules)
+- Configuration files: `.json` extension
+- Template files: Match target file extensions
+
+## Error Handling
+- Always provide clear error messages with context
+- Exit with appropriate exit codes (0 for success, 1 for errors)
+- Log errors using the `logError()` utility function
+
+## Testing
+- Test setup process in clean directory environments
+- Verify package manager detection works correctly
+- Ensure interactive prompts display properly with color coding

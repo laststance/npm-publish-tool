@@ -1,0 +1,39 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# NPM Publish Tool Project Structure
+
+## Project Overview
+This is `@lastsntance/npm-publish-tool` - an automated npm publishing setup tool that configures release-it, GitHub Actions, and creates release commit automation.
+
+## Main Entry Points
+- [setup.mjs](mdc:setup.mjs) - Main CLI setup script that installs and configures everything
+- [templates/npm-publish-tool.mjs](mdc:templates/npm-publish-tool.mjs) - Interactive release commit creation script
+
+## Key Configuration Files
+- [package.json](mdc:package.json) - Package configuration and dependencies
+- [README.md](mdc:README.md) - Project documentation and usage instructions
+
+## Library Structure
+- `/lib/` - Utility modules for setup operations
+  - `packageManager.mjs` - Package manager detection and installation
+  - `fileOperations.mjs` - File and directory operations
+  - `display.mjs` - Terminal output and progress visualization
+
+## Templates Directory
+- `/templates/` - Template files copied during setup
+  - `npm-publish-tool.mjs` - Interactive semver selection and commit script
+  - `.release-it.json` - Release-it configuration template
+  - `release.yml` - GitHub Actions workflow template
+
+## Important Features
+- **Package Manager Detection**: Automatically detects npm/yarn/pnpm
+- **Interactive Semver Selection**: Uses @inquirer/prompts for version selection
+- **Visual Feedback**: Rich terminal output with progress bars and color coding
+- **GitHub Actions Integration**: Automated release publishing workflow
+
+## Script Names
+- Setup command: `npx @lastsntance/npm-publish-tool setup`
+- Generated script: `npm run push-release-commit` (creates release commits)

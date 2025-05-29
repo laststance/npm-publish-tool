@@ -1,0 +1,41 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Semantic Versioning Implementation
+
+## Core Function: incrementVersion()
+The main version increment logic is in [templates/npm-publish-tool.mjs](mdc:templates/npm-publish-tool.mjs).
+
+## Version Types
+- **Major** (X.0.0) - Breaking changes, incompatible API changes
+- **Minor** (X.Y.0) - New features, backwards-compatible functionality  
+- **Patch** (X.Y.Z) - Bug fixes, backwards-compatible bug fixes
+
+## Interactive Selection
+Uses `@inquirer/prompts` select menu with:
+- Visual emoji indicators for each version type
+- Real-time preview of new version with color highlighting
+- Descriptive text explaining each option
+
+## Version Display Logic
+```javascript
+// Current version parts
+const parts = currentVersion.split('.')
+
+// Visual highlighting:
+- Green bold: The number that will be incremented
+- White text: Other version parts that change or stay the same
+- Arrow notation: (newVersion ← currentVersion)
+```
+
+## Implementation Details
+- Major increment: Resets minor and patch to 0
+- Minor increment: Increments minor, resets patch to 0  
+- Patch increment: Only increments patch number
+- Input validation: Ensures version format is MAJOR.MINOR.PATCH
+- Error handling: Clear messages for invalid version formats
+
+## User Experience
+The selection shows immediate visual feedback of what the new version will be, with the changed number highlighted in bold green and other parts in white for clear differentiation.
