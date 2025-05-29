@@ -62,11 +62,8 @@ try {
 
   console.log(`📋 Current version: ${currentVersion}`)
 
-  // Display current version breakdown
-  console.log(`      │ │ │`)
-  console.log(`      │ │ └─ Patch`)
-  console.log(`      │ └─── Minor`)
-  console.log(`      └───── Major`)
+  // Split current version for highlighting
+  const parts = currentVersion.split('.')
 
   // Get user choice for version increment using inquirer select
   const versionType = await select({
@@ -75,17 +72,17 @@ try {
       {
         name: '🔴 Major (breaking changes)',
         value: 'major',
-        description: 'Incompatible API changes (1.0.0 → 2.0.0)',
+        description: `Incompatible API changes (\x1b[1;32m${parseInt(parts[0]) + 1}\x1b[0m\x1b[37m.0.0\x1b[0m ← ${currentVersion})`,
       },
       {
         name: '🟡 Minor (new features)',
         value: 'minor',
-        description: 'Backwards-compatible functionality (1.0.0 → 1.1.0)',
+        description: `Backwards-compatible functionality (\x1b[37m${parts[0]}.\x1b[0m\x1b[1;32m${parseInt(parts[1]) + 1}\x1b[0m\x1b[37m.0\x1b[0m ← ${currentVersion})`,
       },
       {
         name: '🟢 Patch (bug fixes)',
         value: 'patch',
-        description: 'Backwards-compatible bug fixes (1.0.0 → 1.0.1)',
+        description: `Backwards-compatible bug fixes (\x1b[37m${parts[0]}.${parts[1]}.\x1b[0m\x1b[1;32m${parseInt(parts[2]) + 1}\x1b[0m ← ${currentVersion})`,
       },
     ],
   })
