@@ -8,7 +8,9 @@ yarn-error.log
 assets
 tmp
 .husky
-.corsor
+.cursor
 .vscode
 tests
 .env
+.prettierrc
+.prettierignore
