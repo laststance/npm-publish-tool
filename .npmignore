@@ -7,10 +7,13 @@ yarn.lock
 yarn-error.log
 assets
 tmp
+coverage
 .husky
 .cursor
 .vscode
 tests
+test
+vitest.config.js
 .env
 .prettierrc
 .prettierignore

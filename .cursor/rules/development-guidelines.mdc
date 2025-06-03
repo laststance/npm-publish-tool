@@ -1,9 +1,11 @@
 ---
-description:
-globs:
-alwaysApply: false
+description: 
+globs: 
+alwaysApply: true
 ---
 # Development Guidelines
+
+- use pnpm
 
 ## Code Style & Standards
 - Use **ESM modules** (`import`/`export`) throughout the project
