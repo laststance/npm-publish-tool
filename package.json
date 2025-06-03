@@ -1,6 +1,6 @@
 {
   "name": "@laststance/npm-publish-tool",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "Automates the setup of release-it in user projects with proper versioning, changelogs, and GitHub releases",
   "type": "module",
   "bin": {
