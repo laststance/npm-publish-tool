@@ -12,6 +12,7 @@
     "test:watch": "vitest watch",
     "test:coverage": "vitest run --coverage",
     "prepare": "husky",
+    "release": "release-it",
     "prettier": "prettier --ignore-unknown --write .",
     "push-release-commit": "node ./scripts/npm-publish-tool.mjs"
   },
