@@ -1,6 +1,6 @@
 {
   "name": "@laststance/npm-publish-tool",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "Automates the setup of release-it in user projects with proper versioning, changelogs, and GitHub releases",
   "type": "module",
   "bin": {
@@ -12,7 +12,6 @@
     "test:watch": "vitest watch",
     "test:coverage": "vitest run --coverage",
     "prepare": "husky",
-    "release": "release-it",
     "prettier": "prettier --ignore-unknown --write .",
     "push-release-commit": "node ./scripts/npm-publish-tool.mjs"
   },
