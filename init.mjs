@@ -6,11 +6,7 @@ import { fileURLToPath } from 'url'
 import fs from 'fs'
 
 // Import utility modules
-import {
-  detectPackageManager,
-  installPackage,
-  getPackageManagerInfo,
-} from './lib/packageManager.mjs'
+import { installPackage, getPackageManagerInfo } from './lib/packageManager.mjs'
 import {
   copyTemplate,
   addPackageScript,
@@ -21,7 +17,6 @@ import {
 import {
   logSuccess,
   logError,
-  logWarning,
   logInfo,
   logStep,
   logHeader,
@@ -70,8 +65,8 @@ program
 
     logSeparator()
 
-    // Create progress bar
-    const progress = createProgressBar(6)
+    // Create progress bar with updated total (9 steps now)
+    const progress = createProgressBar(9)
 
     try {
       // Step 1: Detect package manager
@@ -92,8 +87,32 @@ program
       logSuccess('release-it installed successfully')
       progress.increment()
 
-      // Step 3: Copy .release-it.json
-      logStep(3, 'Copying .release-it.json configuration...')
+      // Step 3: Install ora (required for npm-publish-tool script)
+      logStep(3, 'Installing ora...')
+      const oraSuccess = installPackage('ora', projectPath, {
+        isDev: true,
+      })
+      if (!oraSuccess) {
+        logError('Failed to install ora')
+        process.exit(1)
+      }
+      logSuccess('ora installed successfully')
+      progress.increment()
+
+      // Step 4: Install @inquirer/prompts (required for npm-publish-tool script)
+      logStep(4, 'Installing @inquirer/prompts...')
+      const inquirerSuccess = installPackage('@inquirer/prompts', projectPath, {
+        isDev: true,
+      })
+      if (!inquirerSuccess) {
+        logError('Failed to install @inquirer/prompts')
+        process.exit(1)
+      }
+      logSuccess('@inquirer/prompts installed successfully')
+      progress.increment()
+
+      // Step 5: Copy .release-it.json
+      logStep(5, 'Copying .release-it.json configuration...')
       const releaseItSuccess = copyTemplate(
         '.release-it.json',
         '.release-it.json',
@@ -106,8 +125,8 @@ program
       logFileOperation('Created', '.release-it.json')
       progress.increment()
 
-      // Step 4: Copy GitHub Actions workflow
-      logStep(4, 'Setting up GitHub Actions workflow...')
+      // Step 6: Copy GitHub Actions workflow
+      logStep(6, 'Setting up GitHub Actions workflow...')
       ensureDirectory('.github/workflows', projectPath)
       const workflowSuccess = copyTemplate(
         'release.yml',
@@ -121,8 +140,8 @@ program
       logFileOperation('Created', '.github/workflows/release.yml')
       progress.increment()
 
-      // Step 5: Create scripts directory and npm-publish-tool script
-      logStep(5, 'Creating scripts and CLI tool...')
+      // Step 7: Create scripts directory and npm-publish-tool script
+      logStep(7, 'Creating scripts and CLI tool...')
       const scriptsSuccess = createScriptsDirectory(projectPath)
       if (!scriptsSuccess) {
         logError('Failed to create scripts directory')
@@ -131,8 +150,8 @@ program
       logFileOperation('Created', 'scripts/npm-publish-tool.mjs')
       progress.increment()
 
-      // Step 6: Add script to package.json
-      logStep(6, 'Adding push-release-commit script to package.json...')
+      // Step 8: Add script to package.json
+      logStep(8, 'Adding push-release-commit script to package.json...')
       const scriptSuccess = addPackageScript(
         'push-release-commit',
         'node ./scripts/npm-publish-tool.mjs',
