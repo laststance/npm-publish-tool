@@ -31,6 +31,6 @@ jobs:
         # Check if the latest commit message contains a release tag pattern (e.g., "release v1.2.3")
         # If found, execute release-it without version increment since version was already bumped in the commit
         run: |
-          if git log --format=%B -n 1 | grep -q 'release v[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'; then
+          if git log --format=%B -n 1 | grep -E -q 'release v[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'; then
             pnpm release-it --no-increment --verbose
           fi
