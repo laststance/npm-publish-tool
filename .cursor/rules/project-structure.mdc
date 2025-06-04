@@ -6,7 +6,7 @@ alwaysApply: false
 # NPM Publish Tool Project Structure
 
 ## Project Overview
-This is `@lastsntance/npm-publish-tool` - an automated npm publishing initialization tool that configures release-it, GitHub Actions, and creates release commit automation.
+This is `@laststance/npm-publish-tool` - an automated npm publishing initialization tool that configures release-it, GitHub Actions, and creates release commit automation.
 
 ## Main Entry Points
 - [init.mjs](mdc:init.mjs) - Main CLI initialization script that installs and configures everything
@@ -35,5 +35,5 @@ This is `@lastsntance/npm-publish-tool` - an automated npm publishing initializa
 - **GitHub Actions Integration**: Automated release publishing workflow
 
 ## Script Names
-- Initialization command: `npx @lastsntance/npm-publish-tool init`
+- Initialization command: `npx @laststance/npm-publish-tool init`
 - Generated script: `npm run push-release-commit` (creates release commits)

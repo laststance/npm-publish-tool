@@ -1,5 +1,5 @@
 <h1 align="center">
-    @lastsntance/npm-publish-tool
+    @laststance/npm-publish-tool
 </h1>
 
 <br>
@@ -25,7 +25,7 @@
 You don't need to install this globally. Use it directly with npx:
 
 ```bash
-npx @lastsntance/npm-publish-tool@latest init
+npx @laststance/npm-publish-tool@latest init
 ```
 
 ## Usage(after setup complete)
