@@ -11,7 +11,6 @@ import ora from 'ora'
  * updates package.json automatically, and creates a commit with the message "release v{version}"
  */
 
-// セマンティックバージョニングに従ってバージョンを増加する関数
 function incrementVersion(version, type) {
   const parts = version.split('.')
   if (parts.length !== 3) {
@@ -128,7 +127,11 @@ try {
   const pushSpinner = ora('exec git push...').start()
   try {
     execSync('git push', { stdio: ['pipe', 'pipe', 'pipe'] })
-    pushSpinner.succeed('🚀 Changes pushed to remote repository')
+    pushSpinner.succeed('🚀 Changes pushed to remote repository,')
+    console.log()
+    console.log(
+      '🎉 If all CI checks pass, the package will be published to npm via GitHub Actions, and a GitHub Release page will be created automatically.',
+    )
   } catch (error) {
     pushSpinner.fail('Failed to push to remote')
     throw error
