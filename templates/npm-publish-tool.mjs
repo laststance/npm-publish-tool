@@ -103,6 +103,7 @@ try {
   // Stage package.json changes with spinner
   const addSpinner = ora('package.json staged...').start()
   try {
+    // TODO show git diff of package.json
     execSync('git add --all', { stdio: ['pipe', 'pipe', 'pipe'] })
     addSpinner.succeed('📁 package.json staged')
   } catch (error) {
