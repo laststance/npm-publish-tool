@@ -2,8 +2,8 @@
 
 ## Features
 
-🚀 **Explicit bump version in CLI, and then auto commit and push as release commit**
-📦 **Autogenerate Github release page**
+🚀 **Explicit bump version in CLI, and then auto commit and push as release commit**  
+📦 **Autogenerate Github release page**  
 🔧 **Publish NPM in GitHub Actions**
 
 ## Requirements
