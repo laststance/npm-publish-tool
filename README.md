@@ -1,4 +1,14 @@
-# @lastsntance/npm-publish-tool
+<h1 align="center">
+    @lastsntance/npm-publish-tool
+</h1>
+
+<br>
+
+<p align="center">
+  <img src="./assets/cover_image.png" alt="cover_image"/>
+</p>
+
+<br>
 
 ## Features
 
@@ -15,7 +25,7 @@
 You don't need to install this globally. Use it directly with npx:
 
 ```bash
-npx @lastsntance/npm-publish-tool init
+npx @lastsntance/npm-publish-tool@latest init
 ```
 
 ## Usage(after setup complete)
@@ -102,6 +112,14 @@ After initialization, your release workflow becomes:
 2. **Update version** in package.json (manually or using `npm version`)
 3. **Create release commit**: `npm run push-release-commit`
 4. **Push to main**: The GitHub Action will automatically create the release
+
+<br>
+
+<p align="center">
+  <img src="./assets/demo.gif" alt="demo"/>
+</p>
+
+<br>
 
 ## Contributing
 
