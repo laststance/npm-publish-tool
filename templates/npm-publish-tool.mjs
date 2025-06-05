@@ -128,7 +128,7 @@ try {
   const pushSpinner = ora('exec git push...').start()
   try {
     execSync('git push', { stdio: ['pipe', 'pipe', 'pipe'] })
-    pushSpinner.succeed('🚀 Changes pushed to remote repository,')
+    pushSpinner.succeed('🚀 Changes pushed to remote repository.')
     console.log()
     console.log(
       '🎉 If all CI checks pass, the package will be published to npm via GitHub Actions, and a GitHub Release page will be created automatically.',
