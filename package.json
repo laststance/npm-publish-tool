@@ -1,19 +1,26 @@
 {
   "name": "@laststance/npm-publish-tool",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Automates the setup of release-it in user projects with proper versioning, changelogs, and GitHub releases",
   "type": "module",
   "bin": {
-    "npm-publish-tool": "./init.mjs"
+    "npm-publish-tool": "./init.mjs",
+    "push-release-commit": "./push-release-commit.mjs"
   },
   "main": "./init.mjs",
+  "files": [
+    "init.mjs",
+    "push-release-commit.mjs",
+    "lib/",
+    "templates/"
+  ],
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:coverage": "vitest run --coverage",
     "prepare": "husky",
     "prettier": "prettier --ignore-unknown --write .",
-    "push-release-commit": "node ./scripts/npm-publish-tool.mjs"
+    "push-release-commit": "push-release-commit"
   },
   "keywords": [
     "release-it",
@@ -27,8 +34,11 @@
   "author": "Ryota Murakami <dojce1048@gmail.com> (https://ryota-murakami.github.io/)",
   "license": "MIT",
   "dependencies": {
+    "@inquirer/prompts": "^7.5.3",
+    "@laststance/npm-publish-tool": "link:../../Library/pnpm/global/5/node_modules/@laststance/npm-publish-tool",
     "chalk": "^5.3.0",
-    "commander": "^12.0.0"
+    "commander": "^12.0.0",
+    "ora": "^8.2.0"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -42,11 +52,9 @@
   },
   "homepage": "https://github.com/laststance/npm-publish-tool#readme",
   "devDependencies": {
-    "@inquirer/prompts": "^7.5.3",
     "@vitest/coverage-v8": "3.2.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.0.0",
-    "ora": "^8.2.0",
     "prettier": "^3.5.3",
     "release-it": "^19.0.3",
     "vitest": "^3.2.1"

@@ -32,6 +32,8 @@ npx @laststance/npm-publish-tool@latest init
 
 ```bash
 npm run push-release-commit
+# or directly
+pnpm push-release-commit
 ```
 
 ## 2. GitHub Repository Setup
@@ -61,9 +63,9 @@ When you run the init command, the tool will:
 
 1. **Detect Package Manager**: Automatically detects whether you're using npm, yarn, or pnpm
 2. **Install release-it**: Installs the release-it package as a dev dependency
-3. **Copy Configuration**: Creates `.release-it.json` with optimized settings
-4. **Initialize GitHub Actions**: Creates `.github/workflows/release.yml` for automated releases
-5. **Create Scripts**: Creates `scripts/npm-publish-tool.mjs` for release commits
+3. **Install npm-publish-tool**: Installs @laststance/npm-publish-tool as a dev dependency
+4. **Copy Configuration**: Creates `.release-it.json` with optimized settings
+5. **Initialize GitHub Actions**: Creates `.github/workflows/release.yml` for automated releases
 6. **Update package.json**: Adds a `push-release-commit` script to your package.json
 
 ## Generated Files
@@ -84,25 +86,26 @@ GitHub Actions workflow that:
 - Detects release commits by pattern
 - Automatically publishes releases
 
-### `scripts/npm-publish-tool.mjs`
-
-A script that:
-
-- Reads version from package.json
-- Creates a commit with format "release v{version}"
-- Pushes changes to remote repository
-
 ### Updated `package.json`
 
-Adds a new script:
+Adds a new script and dev dependency:
 
 ```json
 {
   "scripts": {
-    "push-release-commit": "node ./scripts/npm-publish-tool.mjs"
+    "push-release-commit": "push-release-commit"
+  },
+  "devDependencies": {
+    "@laststance/npm-publish-tool": "^1.6.3"
   }
 }
 ```
+
+The `push-release-commit` command is now available globally within your project and:
+
+- Reads version from package.json
+- Creates a commit with format "release v{version}"
+- Pushes changes to remote repository
 
 ## Workflow
 
