@@ -35,7 +35,6 @@
   "license": "MIT",
   "dependencies": {
     "@inquirer/prompts": "^7.5.3",
-    "@laststance/npm-publish-tool": "link:../../Library/pnpm/global/5/node_modules/@laststance/npm-publish-tool",
     "chalk": "^5.3.0",
     "commander": "^12.0.0",
     "ora": "^8.2.0"

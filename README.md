@@ -26,14 +26,13 @@ You don't need to install this globally. Use it directly with npx:
 
 ```bash
 npx @laststance/npm-publish-tool@latest init
+npm install -D @laststance/npm-publish-tool
 ```
 
 ## Usage(after setup complete)
 
 ```bash
 npm run push-release-commit
-# or directly
-pnpm push-release-commit
 ```
 
 ## 2. GitHub Repository Setup
@@ -94,14 +93,11 @@ Adds a new script and dev dependency:
 {
   "scripts": {
     "push-release-commit": "push-release-commit"
-  },
-  "devDependencies": {
-    "@laststance/npm-publish-tool": "^1.6.3"
   }
 }
 ```
 
-The `push-release-commit` command is now available globally within your project and:
+The `push-release-commit` command is now available within your project and:
 
 - Reads version from package.json
 - Creates a commit with format "release v{version}"

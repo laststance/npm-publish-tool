@@ -135,7 +135,7 @@ program
       logStep(6, 'Adding push-release-commit script to package.json...')
       const scriptSuccess = addPackageScript(
         'push-release-commit',
-        'push-release-commit',
+        'npx push-release-commit',
         projectPath,
       )
       if (!scriptSuccess) {
