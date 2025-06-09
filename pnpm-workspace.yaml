@@ -1,4 +1,2 @@
 onlyBuiltDependencies:
   - esbuild
-overrides:
-  '@laststance/npm-publish-tool': link:../../Library/pnpm/global/5/node_modules/@laststance/npm-publish-tool
