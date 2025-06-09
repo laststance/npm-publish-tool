@@ -24,6 +24,9 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0
     devDependencies:
+      '@laststance/npm-publish-tool':
+        specifier: ^1.6.6
+        version: 1.6.6
       '@vitest/coverage-v8':
         specifier: 3.2.1
         version: 3.2.1(vitest@3.2.2(jiti@2.4.2)(yaml@2.8.0))
@@ -366,6 +369,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@laststance/npm-publish-tool@1.6.6':
+    resolution: {integrity: sha512-jzGNHVTunSMFawcj4aNXgb8gkQ4ILkg4c/e1xfGh9YsQyv1hjCn/urc9PQTngF2b04T1QVp9mCe3PqxP7VgzPg==}
+    engines: {node: '>=20.0.0'}
+    hasBin: true
 
   '@nodeutils/defaults-deep@1.1.0':
     resolution: {integrity: sha512-gG44cwQovaOFdSR02jR9IhVRpnDP64VN6JdjYJTfNz4J4fWn7TQnmrf22nSjRqlwlxPcW8PL/L3KbJg3tdwvpg==}
@@ -1791,6 +1799,15 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@laststance/npm-publish-tool@1.6.6':
+    dependencies:
+      '@inquirer/prompts': 7.5.3
+      chalk: 5.4.1
+      commander: 12.1.0
+      ora: 8.2.0
+    transitivePeerDependencies:
+      - '@types/node'
 
   '@nodeutils/defaults-deep@1.1.0':
     dependencies:
