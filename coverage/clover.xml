@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1748987637985" clover="3.2.0">
-  <project timestamp="1748987637985" name="All files">
-    <metrics statements="285" coveredstatements="285" conditionals="53" coveredconditionals="53" methods="21" coveredmethods="21" elements="359" coveredelements="359" complexity="0" loc="285" ncloc="285" packages="1" files="3" classes="3"/>
-    <file name="display.mjs" path="/Users/ryota.murakami/laststance/npm-publish-tool/lib/display.mjs">
-      <metrics statements="84" coveredstatements="84" conditionals="16" coveredconditionals="16" methods="13" coveredmethods="13"/>
+<coverage generated="1754894342769" clover="3.2.0">
+  <project timestamp="1754894342769" name="All files">
+    <metrics statements="283" coveredstatements="283" conditionals="53" coveredconditionals="53" methods="21" coveredmethods="21" elements="357" coveredelements="357" complexity="0" loc="283" ncloc="283" packages="1" files="3" classes="3"/>
+    <file name="display.mjs" path="/Users/ryotamurakami/laststance/npm-publish-tool/lib/display.mjs">
+      <metrics statements="82" coveredstatements="82" conditionals="16" coveredconditionals="16" methods="13" coveredmethods="13"/>
       <line num="1" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
@@ -65,11 +65,9 @@
       <line num="72" count="7" type="stmt"/>
       <line num="73" count="7" type="cond" truecount="1" falsecount="0"/>
       <line num="74" count="7" type="stmt"/>
-      <line num="75" count="7" type="stmt"/>
       <line num="76" count="7" type="cond" truecount="1" falsecount="0"/>
       <line num="77" count="1" type="stmt"/>
       <line num="78" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="79" count="6" type="stmt"/>
       <line num="80" count="6" type="stmt"/>
       <line num="81" count="6" type="stmt"/>
       <line num="82" count="6" type="stmt"/>
@@ -89,7 +87,7 @@
       <line num="99" count="7" type="stmt"/>
       <line num="100" count="7" type="stmt"/>
     </file>
-    <file name="fileOperations.mjs" path="/Users/ryota.murakami/laststance/npm-publish-tool/lib/fileOperations.mjs">
+    <file name="fileOperations.mjs" path="/Users/ryotamurakami/laststance/npm-publish-tool/lib/fileOperations.mjs">
       <metrics statements="117" coveredstatements="117" conditionals="16" coveredconditionals="16" methods="5" coveredmethods="5"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
@@ -209,7 +207,7 @@
       <line num="134" count="1" type="stmt"/>
       <line num="135" count="5" type="stmt"/>
     </file>
-    <file name="packageManager.mjs" path="/Users/ryota.murakami/laststance/npm-publish-tool/lib/packageManager.mjs">
+    <file name="packageManager.mjs" path="/Users/ryotamurakami/laststance/npm-publish-tool/lib/packageManager.mjs">
       <metrics statements="84" coveredstatements="84" conditionals="21" coveredconditionals="21" methods="3" coveredmethods="3"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
