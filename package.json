@@ -3,6 +3,12 @@
   "version": "1.6.10",
   "description": "Automates the setup of release-it in user projects with proper versioning, changelogs, and GitHub releases",
   "type": "module",
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  },
+  "volta": {
+    "node": "22.21.1"
+  },
   "bin": {
     "npm-publish-tool": "./init.mjs",
     "push-release-commit": "./push-release-commit.mjs"
@@ -59,10 +65,5 @@
     "release-it": "^19.0.3",
     "vitest": "^3.2.1"
   },
-  "lint-staged": {
-    "*": "prettier --ignore-unknown --write"
-  },
-  "volta": {
-    "node": "22.16.0"
-  }
+  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
 }
