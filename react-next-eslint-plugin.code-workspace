@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "path": "../react-next-eslint-plugin",
+    },
+    {
+      "path": ".",
+    },
+  ],
+  "settings": {},
+}
