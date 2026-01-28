@@ -11,6 +11,6 @@
     "autoGenerate": true
   },
   "npm": {
-    "publishArgs": ["--provenance"]
+    "publish": true
   }
 }
