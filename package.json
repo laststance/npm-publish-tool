@@ -6,9 +6,6 @@
   "lint-staged": {
     "*": "prettier --ignore-unknown --write"
   },
-  "volta": {
-    "node": "22.21.1"
-  },
   "bin": {
     "npm-publish-tool": "./init.mjs",
     "push-release-commit": "./push-release-commit.mjs"
