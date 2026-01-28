@@ -51,21 +51,21 @@
   },
   "homepage": "https://github.com/laststance/npm-publish-tool#readme",
   "dependencies": {
-    "@inquirer/prompts": "^8.0.1",
+    "@inquirer/prompts": "^8.2.0",
     "chalk": "^5.6.2",
     "commander": "^14.0.2",
-    "ora": "^9.0.0"
+    "ora": "^9.1.0"
   },
   "devDependencies": {
-    "@inquirer/testing": "^3.0.1",
-    "@laststance/npm-publish-tool": "^1.6.12",
-    "@vitest/coverage-v8": "4.0.14",
+    "@inquirer/testing": "^3.0.4",
+    "@laststance/npm-publish-tool": "^1.6.13",
+    "@vitest/coverage-v8": "4.0.18",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "mock-stdin": "^1.0.0",
-    "prettier": "^3.6.2",
-    "release-it": "^19.0.6",
-    "vitest": "^4.0.14"
+    "prettier": "^3.8.1",
+    "release-it": "^19.2.4",
+    "vitest": "^4.0.18"
   },
   "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
 }
