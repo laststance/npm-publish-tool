@@ -203,19 +203,28 @@ describe('display utilities', () => {
         '\n' + chalk.yellow('Next steps:'),
       )
       expect(mockConsoleLog).toHaveBeenCalledWith(
-        chalk.white(
-          '1. Configure your GitHub repository secrets (NPM_TOKEN, ACCESS_TOKEN)',
+        chalk.white('1. Configure Trusted Publishing on npmjs.com:'),
+      )
+      expect(mockConsoleLog).toHaveBeenCalledWith(
+        chalk.gray(
+          '   → Package Settings → Trusted Publishing → Add GitHub Actions',
         ),
       )
       expect(mockConsoleLog).toHaveBeenCalledWith(
-        chalk.white('2. Make sure Git working tree clean'),
+        chalk.gray('   → Set: org/user, repository, workflow: "release.yml"'),
+      )
+      expect(mockConsoleLog).toHaveBeenCalledWith(
+        chalk.white('2. Make sure Git working tree is clean'),
       )
       expect(mockConsoleLog).toHaveBeenCalledWith(
         chalk.white('3. Run: npm run push-release-commit'),
       )
       expect(mockConsoleLog).toHaveBeenCalledWith(
-        chalk.white(
-          '4. Your package published to npm registry, Github release page will be automatically created.',
+        chalk.white('4. Package publishes via OIDC (no NPM_TOKEN needed)'),
+      )
+      expect(mockConsoleLog).toHaveBeenCalledWith(
+        chalk.gray(
+          '\n💡 Note: First publish requires manual `npm publish` to create package',
         ),
       )
     })
