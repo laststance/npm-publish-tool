@@ -31,6 +31,9 @@ jobs:
         with:
           version: 10
 
+      # Upgrade npm for OIDC support (requires npm 11.5.1+)
+      - run: npm install -g npm@latest
+
       # 📝 Write your library build steps here
 
       # Install with --ignore-scripts (prevent malicious postinstall)
